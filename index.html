@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý TouseHao</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>TouseHao</h2>
+            <!-- Hiển thị thông tin người dùng đăng nhập -->
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Quản lý nhà</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+            </header>
+
+            <!-- Section: Student Management -->
+            <section id="house-management" class="management-section">
+                <h2>Quản lý nhà</h2>
+                <div class="header-tools">
+                    <button id="openModalBtn" class="add-btn">Thêm nhà</button>
+                </div>
+
+                <!-- Modal -->
+                <div id="houseModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2 id="modalTitle">Thêm thông tin nhà</h2>
+                        <form class="modal-form">
+                            <div class="form-group">
+                                <label for="houseImage">Ảnh của nhà</label>
+                                <label class="label-image" for="houseImage">
+                                    <i class="fas fa-upload"></i>
+                                    <p>Nhấn để tải ảnh</p>
+                                </label>
+                                <input type="file" id="houseImage" name="houseImage" accept="image/*" required>
+                                <img id="imgPreview" class="img-preview" alt="Xem trước ảnh" />
+                            </div>
+                            <div class="form-group">
+                                <label for="houseDescription">Mô tả của nhà</label>
+                                <input type="text" id="houseDescription" name="houseDescription"
+                                    placeholder="Nhập mô tả của nhà" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="houseDetailDescription">Mô tả chi tiết của nhà</label>
+                                <textarea id="houseDetailDescription" name="houseDetailDescription"
+                                    placeholder="Nhập mô tả chi tiết" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="houseAddress">Địa chỉ của nhà</label>
+                                <input type="text" id="houseAddress" name="houseAddress"
+                                    placeholder="Nhập địa chỉ của nhà" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="houseArea">Diện tích của nhà (m²)</label>
+                                <input type="text" id="houseArea" name="houseArea"
+                                    placeholder="Nhập diện tích của nhà" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="housePrice">Giá của nhà (VNĐ)</label>
+                                <input type="number" id="housePrice" name="housePrice" placeholder="Nhập giá của nhà"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="houseType">Loại nhà</label>
+                                <select id="houseType" required>
+                                    <!-- Loại nhà sẽ được thêm vào đây bằng JavaScript từ Firebase -->
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="houseDistrict">Quận</label>
+                                <select id="houseDistrict" required>
+                                    <!-- Quận sẽ được thêm vào đây bằng JavaScript từ Firebase -->
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="houseStatus">Tình trạng của nhà</label>
+                                <select id="houseStatus" required>
+                                    <!-- Tình trạng nhà sẽ được thêm vào đây bằng JavaScript từ Firebase -->
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="houseRenter" id="houseRenterLabel">Người thuê</label>
+                                <select id="houseRenter" required>
+                                    <!-- Tình trạng nhà sẽ được thêm vào đây bằng JavaScript từ Firebase -->
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="houseContact">Thông tin liên hệ</label>
+                                <input type="text" id="houseContact" name="houseContact"
+                                    placeholder="Nhập thông tin liên hệ" required>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" id="modalSubmitBtn" class="submit-btn">Thêm nhà</button>
+                                <button type="button" class="cancel-btn">Hủy</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+                <!-- Modal Xác Nhận Xóa -->
+                <div id="deleteModal" class="delete-modal">
+                    <div class="delete-modal-content">
+                        <span class="close" id="closeDeleteModal">&times;</span>
+                        <h2>Xóa nhà</h2>
+                        <p>Bạn có chắc chắn muốn xóa nhà này không?</p>
+                        <div class="delete-modal-footer">
+                            <button class="confirm-delete-btn" id="confirmDeleteBtn">Xóa</button>
+                            <button class="cancel-delete-btn" id="cancelDeleteBtn">Hủy</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Ảnh</th>
+                            <th>Giá</th>
+                            <th>Quận</th>
+                            <th>Loại nhà</th>
+                            <th>Tình trạng</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       
+                    </tbody>
+                </table>
+
+                <div id="pagination">
+                    <button id="prevPage">Trước</button>
+                    <span id="pageInfo"></span>
+                    <button id="nextPage">Sau</button>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <script type="module" src="index.js"></script>
+
+</body>
+
+</html>
