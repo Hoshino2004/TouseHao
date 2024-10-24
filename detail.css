@@ -1,0 +1,102 @@
+/* CSS trang chi tiết */
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.report-details {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.house-image {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.report-info {
+    flex-grow: 1;
+}
+
+.report-info p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #555;
+}
+
+.report-info p strong {
+    color: #333;
+}
+
+#btnBack {
+    margin-left: 500px;
+    margin-top: 30px;
+}
+
+#openModalBtn, #updateStatusBtn {
+    background-color: rgb(242, 44, 5);
+}
+
+button {
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btnBack:hover {
+    background-color: #0056b3;
+}
+
+#openModalBtn:hover, #updateStatusBtn:hover {
+    opacity: 0.8;
+}
+
+/* CSS modal */
+.modal {
+    display: none; /* Ẩn modal khi chưa hiển thị */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

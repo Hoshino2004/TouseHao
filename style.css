@@ -482,5 +482,9 @@ select::-ms-expand {
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng cho ảnh */
 }
 
+#houseDetailDescription {
+  resize: none;
+}
+
 
 

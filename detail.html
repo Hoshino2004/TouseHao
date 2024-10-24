@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết báo cáo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>TouseHao</h2>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Quản lý nhà</a></li>
+                    <li><a href="baotri.html">Thông báo bảo trì</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <h1>Chi tiết báo cáo</h1>
+            </header>
+
+            <div class="report-details">
+                <img id="houseImage2" src="" alt="Ảnh nhà" class="house-image">
+                <div class="report-info">
+                    <p><strong>ID nhà:</strong> <span id="idNha"></span></p>
+                    <p><strong>Người thuê:</strong> <span id="email"></span></p>
+                    <p><strong>Loại báo cáo:</strong> <span id="notice"></span></p>
+                    <p><strong>Trạng thái:</strong> <span id="tinhtrang"></span></p>
+                    <p><strong>Mô tả:</strong> <span id="note"></span></p>
+                </div>
+            </div>
+            <button id="btnBack" onclick="window.history.back()">Quay lại</button>
+            <button id="openModalBtn">Cập nhật trạng thái</button>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div id="updateModal" class="modal">
+        <div class="modal-content">
+            <h2>Cập nhật trạng thái</h2>
+            <select id="statusSpinner">
+                <!-- Spinner options sẽ được thêm từ JavaScript -->
+            </select>
+            <button id="updateStatusBtn">Cập nhật</button>
+            <button id="closeModalBtn">Đóng</button>
+        </div>
+    </div>
+
+    <script type="module" src="detail.js"></script>
+</body>

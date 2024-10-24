@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý TouseHao</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>TouseHao</h2>
+            <!-- Hiển thị thông tin người dùng đăng nhập -->
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Quản lý nhà</a></li>
+                    <li><a href="baotri.html">Thông báo bảo trì</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+            </header>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID nhà</th>
+                            <th>Ảnh nhà</th>
+                            <th>Người thuê</th>
+                            <th>Loại báo cáo</th>
+                            <th>Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       
+                    </tbody>
+                </table>
+
+                <div id="pagination">
+                    <button id="prevPage">Trước</button>
+                    <span id="pageInfo"></span>
+                    <button id="nextPage">Sau</button>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+    <script type="module" src="baotri.js"></script>
+
+</body>
+
+</html>
